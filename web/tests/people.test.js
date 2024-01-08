@@ -479,7 +479,7 @@ test_people("get_recipients", () => {
     assert.equal(people.get_recipients("30,32"), "Isaac Newton");
 
     muted_users.add_muted_user(304);
-    assert.equal(people.get_recipients("304,32"), "Isaac Newton, translated: Muted user");
+    assert.equal(people.get_recipients("304,32"), "Isaac Newton and translated: Muted user");
 });
 
 test_people("get_full_name", () => {

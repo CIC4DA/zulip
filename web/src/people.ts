@@ -476,7 +476,7 @@ export function get_recipients(user_ids_string: string): string {
     }
 
     const names = get_display_full_names(other_ids).sort();
-    return names.join(", ");
+    return util.format_array_as_list(names, "long", "conjunction");
 }
 
 export function pm_reply_user_string(message: Message): string | undefined {
