@@ -160,16 +160,12 @@ backoff==2.2.1 \
     --hash=sha256:03f829f5bb1923180821643f8753b0502c3b682293992485b0eef2807afa5cba \
     --hash=sha256:63579f9a0628e06278f7e47b7d7d5b6ce20dc65c5e96a6f3ca99a6adca0396e8
     # via -r requirements/common.in
-https://github.com/andersk/zoneinfo/archive/f9687abaea8453be1c8d0e21544bd557d65af933.zip#egg=backports.zoneinfo==0.2.1+git ; python_version < "3.9" \
-    --hash=sha256:23938590401ee45d88f37a5caa538b410ffa827169965a0bcf387da13b695450
-    # via
-    #   -r requirements/common.in
-    #   django
 beautifulsoup4==4.12.3 \
     --hash=sha256:74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051 \
     --hash=sha256:b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed
     # via
     #   -r requirements/common.in
+    #   markdownify
     #   pyoembed
     #   zulip-bots
 boto3==1.34.48 \
@@ -876,21 +872,6 @@ idna==3.6 \
     # via
     #   requests
     #   yarl
-importlib-metadata==7.0.1 ; python_version < "3.10" \
-    --hash=sha256:4805911c3a4ec7c3966410053e9ec6a1fecd629117df5adee56dfc9432a1081e \
-    --hash=sha256:f238736bb06590ae52ac1fab06a3a9ef1d8dce2b7a35b5ab329371d6c8f5d2cc
-    # via
-    #   -r requirements/common.in
-    #   markdown
-    #   zulip-bots
-importlib-resources==6.1.1 ; python_version < "3.9" \
-    --hash=sha256:3893a00122eafde6894c59914446a512f728a0c1a45f9bb9b63721b6bacf0b4a \
-    --hash=sha256:e8bf90d8213b486f428c9c39714b920041cb02c184686a3dee24905aaa8105d6
-    # via
-    #   -r requirements/common.in
-    #   jsonschema
-    #   jsonschema-specifications
-    #   openapi-spec-validator
 ipython==8.12.3 \
     --hash=sha256:3910c4b54543c2ad73d06579aa771041b7d5707b033bd488669b4cf544e3b363 \
     --hash=sha256:b0340d46a933d27c657b211a329d0be23793c36595acf9e6ef4164bc01a1804c
@@ -1074,6 +1055,10 @@ lxml==5.1.0 \
 markdown==3.5.2 \
     --hash=sha256:d43323865d89fc0cb9b20c75fc8ad313af307cc087e84b657d9eec768eddeadd \
     --hash=sha256:e1ac7b3dc550ee80e602e71c1d168002f062e49f1b11e26a36264dafd4df2ef8
+    # via -r requirements/common.in
+markdownify==0.11.6 \
+    --hash=sha256:009b240e0c9f4c8eaf1d085625dcd4011e12f0f8cec55dedf9ea6f7655e49bfe \
+    --hash=sha256:ba35fe289d5e9073bcd7d2cad629278fe25f1a93741fcdc0bfb4f009076d8324
     # via -r requirements/common.in
 markupsafe==2.1.5 \
     --hash=sha256:00e046b6dd71aa03a41079792f8473dc494d564611a8f89bbbd7cb93295ebdcf \
@@ -1427,10 +1412,6 @@ pillow==10.2.0 \
     --hash=sha256:f379abd2f1e3dddb2b61bc67977a6b5a0a3f7485538bcc6f39ec76163891ee48 \
     --hash=sha256:fe4c15f6c9285dc54ce6553a3ce908ed37c8f3825b5a51a15c91442bb955b868
     # via -r requirements/common.in
-pkgutil-resolve-name==1.3.10 \
-    --hash=sha256:357d6c9e6a755653cfd78893817c0853af365dd51ec97f3d358a819373bbd174 \
-    --hash=sha256:ca27cc078d25c5ad71a9de0a7a330146c4e014c2462d9af19c6b828280649c5e
-    # via jsonschema
 polib==1.2.0 \
     --hash=sha256:1c77ee1b81feb31df9bca258cbc58db1bbb32d10214b173882452c73af06d62d \
     --hash=sha256:f3ef94aefed6e183e342a8a269ae1fc4742ba193186ad76f175938621dbfc26b
@@ -2066,6 +2047,7 @@ six==1.16.0 \
     #   django-bitfield
     #   html5lib
     #   isodate
+    #   markdownify
     #   python-binary-memcached
     #   python-dateutil
     #   rfc3339-validator
@@ -2185,10 +2167,8 @@ typing-extensions==4.9.0 \
     --hash=sha256:af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd
     # via
     #   -r requirements/common.in
-    #   annotated-types
     #   asgiref
     #   django-stubs-ext
-    #   ipython
     #   mypy-boto3-s3
     #   mypy-boto3-ses
     #   mypy-boto3-sns
@@ -2341,12 +2321,6 @@ yarl==1.9.4 \
     --hash=sha256:f3bc6af6e2b8f92eced34ef6a96ffb248e863af20ef4fde9448cc8c9b858b749 \
     --hash=sha256:f7d6b36dd2e029b6bcb8a13cf19664c7b8e19ab3a58e0fefbb5b8461447ed5ec
     # via aiohttp
-zipp==3.17.0 \
-    --hash=sha256:0e923e726174922dce09c53c59ad483ff7bbb8e572e00c7f7c46b88556409f31 \
-    --hash=sha256:84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0
-    # via
-    #   importlib-metadata
-    #   importlib-resources
 https://github.com/zulip/python-zulip-api/archive/0.9.0.zip#egg=zulip==0.9.0+git&subdirectory=zulip \
     --hash=sha256:71ea94192f1a0de1c45fd177e827b65fe4970c4fc8565991fd066b4de77eaccb
     # via
